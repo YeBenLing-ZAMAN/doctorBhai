@@ -8,7 +8,7 @@ const ContactUs = () => {
             'backgroundRepeat': "no-repeat",
             'background': `url(${contactBGI})`,
             'backgroundAttachment': 'fiexd'
-        }} className='flex flex-col justify-center items-center mb-20 py-20 px-3'>
+        }} className='flex flex-col justify-center items-center py-20 px-3'>
             <div className=' mb-14'>
                 <h3 className='text-xl font-blod uppercase text-primary text-center'>Contact Us</h3>
                 <p className='text-5xl text-center'>Stay connected with us</p>
