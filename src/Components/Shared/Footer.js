@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import footerImage from '../../assets/images/footer.png';
 
 const Footer = () => {
     return (
-        <footer>
-            <div className="footer p-10 bg-base-200 text-base-content">
+        <footer style={{background: `url(${footerImage},)`, backgroundSize:'cover'}}>
+            <div className="footer p-10 text-base-content">
                 <div>
                     <span className="footer-title">Services</span>
                     <Link to='' className="link link-hover">Branding</Link>
@@ -39,7 +40,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='text-center p-4 bg-base-300 text-base-content'>
+            <div className='text-center p-4 text-base-content'>
                 <p>Copyright © 2022 - All right reserved by zaman</p>
             </div>
         </footer>
