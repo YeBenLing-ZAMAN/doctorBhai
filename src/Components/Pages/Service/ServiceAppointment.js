@@ -11,8 +11,8 @@ const ServiceAppointment = () => {
             <div className='flex-1 p-10 lg:p-2'>
                 <h3 className='text-xl text-primary font-bold'>Appointment</h3>
                 <h2 className='text-3xl text-white'>Make an Appointment Today</h2>
-                <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo optio voluptatem adipisci enim velit sapiente corporis, dolorum vero magnam porro sunt, laudantium iusto eos vitae omnis! Error aperiam delectus amet at ipsum fuga, in inventore quia quos quam nam modi.</p>
-                <div className='className="justify-start mt-4'>
+                <p className='text-white mt-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo optio voluptatem adipisci enim velit sapiente corporis, dolorum vero magnam porro sunt, laudantium iusto eos vitae omnis! Error aperiam delectus amet at ipsum fuga, in inventore quia quos quam nam modi.</p>
+                <div className='className="justify-start mt-5'>
                     <PrimaryButton>Get STARTED</PrimaryButton>
                 </div>
             </div>

@@ -5,9 +5,10 @@ import contactBGI from '../../../assets/images/appointment.png'
 const ContactUs = () => {
     return (
         <div style={{
-            'backgroundRepeat': "no-repeat",
-            'background': `url(${contactBGI})`,
-            'backgroundAttachment': 'fiexd'
+            background: `url(${contactBGI})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
         }} className='flex flex-col justify-center items-center py-20 px-3'>
             <div className=' mb-14'>
                 <h3 className='text-xl font-blod uppercase text-primary text-center'>Contact Us</h3>
