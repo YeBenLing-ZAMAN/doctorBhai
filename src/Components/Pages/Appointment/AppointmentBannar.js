@@ -3,7 +3,7 @@ import AppointmentBGI from '../../../assets/images/bg.png';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 
-const AppointmentBannar = ({data, setDate}) => {
+const AppointmentBannar = ({date, setDate}) => {
     return (
         <div>
             <div class="hero min-h-screen bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${AppointmentBGI})` }}>
@@ -15,7 +15,7 @@ const AppointmentBannar = ({data, setDate}) => {
                             styles={{
                                 caption: { color: 'red' }
                               }}
-                            selected={data}
+                            selected={date}
                             onSelect={setDate}
                         />
                     </div>
