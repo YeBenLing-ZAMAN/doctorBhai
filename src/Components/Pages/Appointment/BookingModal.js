@@ -9,6 +9,9 @@ const BookingModal = ({ treatment, date,setTreatment }) => {
         event.preventDefault();
         const slot = event.target.slot.value;
         console.log(_id, name, slot);
+
+
+        /* now for closed the modal */
         setTreatment(null);
 
     }
@@ -32,7 +35,7 @@ const BookingModal = ({ treatment, date,setTreatment }) => {
                         <input type="text" name='name' placeholder="Your Name" class="input input-bordered w-full max-w-xs" />
                         <input type="email" name='email' placeholder="Email Address" class="input input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' placeholder="Your Phone Number" class="input input-bordered w-full max-w-xs" />
-                        <input type="submit" placeholder="Submit" class="btn btn-secondary w-full max-w-xs" />
+                        <input type="submit" placeholder="Submit" class="btn btn-secondary bg-gradient-to-r from-primary to-secondary w-full max-w-xs" />
                     </form>
                 </div>
             </div>
