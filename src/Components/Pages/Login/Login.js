@@ -2,6 +2,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
+import Loading from '../../Shared/Loading';
 
 
 const Login = () => {
@@ -12,7 +13,7 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
     const onSubmit = data => {
         console.log(data);
@@ -20,15 +21,12 @@ const Login = () => {
     }
 
 
+    let signInError;
     if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
+        signInError = <p className='text-red-500 '><small>{error?.message || gError?.message}</small></p>
     }
     if (loading || gLoading) {
-        return <p>Loading...</p>;
+        return <Loading></Loading>;
     }
     if (user) {
         console.log('user', user);
@@ -54,11 +52,11 @@ const Login = () => {
                                 placeholder="Enter Your Email"
                                 className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is Required'
+                                    },
                                     pattern: {
-                                        required: {
-                                            value: true,
-                                            message: 'Email is Required'
-                                        },
                                         value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                                         message: 'Enter Vaild Email Address'
                                     }
@@ -113,6 +111,7 @@ const Login = () => {
                             </label>
                         </div>
 
+                        {signInError}
 
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
