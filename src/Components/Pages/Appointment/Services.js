@@ -3,19 +3,19 @@ import React from 'react';
 const Services = ({ service, setTreatment }) => {
     const { slots, name } = service
     return (
-        <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-            <div class="card-body">
-                <h2 class="card-title text-center text-primary">{name}</h2>
+        <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+            <div className="card-body">
+                <h2 className="card-title text-center text-primary">{name}</h2>
                 <p>{
                     slots.length > 0
                         ? <span>{slots[0]}</span>
                         : <span className='text-red-500'>Try another day</span>
                 }</p>
                 <p>{slots.length} {slots.length > 1 ? 'spaces' : 'space'} is avilable</p>
-                <div class="card-actions justify-start">
+                <div className="card-actions justify-start">
                     <label
                         for="booking-modal"
-                        class="btn modal-button btn-secondary bg-gradient-to-r from-primary to-secondary text-white uppercase"
+                        className="btn modal-button btn-secondary bg-gradient-to-r from-primary to-secondary text-white uppercase"
                         disabled={!slots.length}
                         onClick={() => setTreatment(service)}>
                         Book Appointment

@@ -3,6 +3,7 @@ import './App.css';
 import About from './Components/Pages/About/About';
 import Appointment from './Components/Pages/Appointment/Appointment';
 import Home from './Components/Pages/Home/Home';
+import Login from './Components/Pages/Login/Login';
 import Navbar from './Components/Shared/Navbar';
 import NotFound from './Components/Shared/NotFound';
 
@@ -14,7 +15,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/appointment" element={<Appointment />} />
-        <Route path="about" element={<About />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

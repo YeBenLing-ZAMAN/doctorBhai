@@ -7,9 +7,9 @@ import phoneIcon from '../../../assets/icons/phone.svg'
 const Info = () => {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-3'>
-            <InfoCard cardTitle="Opening Hours" bgclass="font-bold bg-gradient-to-r from-primary to-secondary" img={clockIcon}></InfoCard>
-            <InfoCard cardTitle="Our Location" bgclass="bg-accent" img={markerIcon}></InfoCard>
-            <InfoCard cardTitle="Contact Us" bgclass="font-bold bg-gradient-to-r from-primary to-secondary" img={phoneIcon}></InfoCard>
+            <InfoCard cardTitle="Opening Hours" bgclassName="font-bold bg-gradient-to-r from-primary to-secondary" img={clockIcon}></InfoCard>
+            <InfoCard cardTitle="Our Location" bgclassName="bg-accent" img={markerIcon}></InfoCard>
+            <InfoCard cardTitle="Contact Us" bgclassName="font-bold bg-gradient-to-r from-primary to-secondary" img={phoneIcon}></InfoCard>
         </div>
     );
 };

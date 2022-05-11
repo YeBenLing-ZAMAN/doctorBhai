@@ -6,9 +6,9 @@ import 'react-day-picker/dist/style.css';
 const AppointmentBannar = ({date, setDate}) => {
     return (
         <div>
-            <div class="hero min-h-screen bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${AppointmentBGI})` }}>
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <img src={appoinmentBannarImg} class="w-full lg:w-1/2 rounded-lg shadow-3xl" alt='doctor chair' />
+            <div className="hero min-h-screen bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${AppointmentBGI})` }}>
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <img src={appoinmentBannarImg} className="w-full lg:w-1/2 rounded-lg shadow-3xl" alt='doctor chair' />
                     <div>
                         <DayPicker
                             mode="single"

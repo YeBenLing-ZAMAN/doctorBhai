@@ -15,9 +15,9 @@ const ContactUs = () => {
                 <p className='text-5xl text-center'>Stay connected with us</p>
             </div>
             <div className='flex flex-col w-full lg:w-1/2'>
-                <input type="text" placeholder="Email Address" class="my-2 input input-bordered input-success w-full max-w-full" />
-                <input type="text" placeholder="Subject" class="my-2 input input-bordered input-success w-full max-w-full" />
-                <textarea class="my-2 textarea textarea-success" placeholder="Your Message"></textarea>
+                <input type="text" placeholder="Email Address" className="my-2 input input-bordered input-success w-full max-w-full" />
+                <input type="text" placeholder="Subject" className="my-2 input input-bordered input-success w-full max-w-full" />
+                <textarea className="my-2 textarea textarea-success" placeholder="Your Message"></textarea>
                 <div className='w-full'>
                     <PrimaryButton>Submit</PrimaryButton>
                 </div>
