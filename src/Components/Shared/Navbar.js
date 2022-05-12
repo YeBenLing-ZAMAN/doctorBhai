@@ -19,7 +19,7 @@ const Navbar = () => {
         <li><Link to='/review'>Reviews</Link></li>
         <li><Link to='/contact'>Contact Us</Link></li>
         <li><Link to='/about'>About</Link></li>
-        <li>{user ? <button onClick={logout} class="btn btn-ghost">{user?.displayName} Sign Out</button> : <Link to='/login'>LogIn</Link>}</li>
+        <li>{user ? <button onClick={logout} className="btn btn-ghost">{user?.displayName} Sign Out</button> : <Link to='/login'>LogIn</Link>}</li>
     </>
     return (
         <div className="navbar bg-base-100 sticky top-0 z-10">

@@ -14,7 +14,7 @@ const Services = ({ service, setTreatment }) => {
                 <p>{slots.length} {slots.length > 1 ? 'spaces' : 'space'} is avilable</p>
                 <div className="card-actions justify-start">
                     <label
-                        for="booking-modal"
+                        htmlFor="booking-modal"
                         className="btn modal-button btn-secondary bg-gradient-to-r from-primary to-secondary text-white uppercase"
                         disabled={!slots.length}
                         onClick={() => setTreatment(service)}>

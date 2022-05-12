@@ -4,7 +4,7 @@ import BookingModal from './BookingModal';
 import Services from './Services';
 
 const AvailableAppointments = ({date}) => {
-    console.log('date:', date);
+    // console.log('date:', date);
     const [services, setServices] = useState([]);
     const [treatment , setTreatment] = useState(null);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
@@ -19,6 +19,13 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
+    useEffect(() => {
+        if (user || gUser) {
+            console.log('user', user);
+            navigate(from, { replace: true });
+        }
+    }, [user,gUser, from, navigate])
+
 
     const onSubmit = async data => {
         // console.log(data);
@@ -33,10 +40,8 @@ const Login = () => {
     if (loading || gLoading) {
         return <Loading></Loading>;
     }
-    if (user || gUser) {
-        console.log('user', user);
-        navigate(from, { replace: true });
-    }
+
+ 
 
 
 
