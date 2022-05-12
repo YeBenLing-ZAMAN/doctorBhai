@@ -3,7 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -15,10 +15,11 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
 
-    const onSubmit = data => {
-        console.log(data);
-        signInWithEmailAndPassword(data.email, data.password)
+    const onSubmit = async data => {
+        // console.log(data);
+        await signInWithEmailAndPassword(data.email, data.password);
     }
 
 
@@ -29,8 +30,9 @@ const Login = () => {
     if (loading || gLoading) {
         return <Loading></Loading>;
     }
-    if (user) {
+    if (user || gUser) {
         console.log('user', user);
+        navigate('/appointment');
     }
 
 
@@ -120,7 +122,7 @@ const Login = () => {
                 </div>
                 <div className="divider">OR</div>
                 <button onClick={() => signInWithGoogle()} className="btn btn-accent">CONTINUE WITH GOOGLE</button>
- 
+
             </div>
         </div>
     );
