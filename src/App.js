@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import DashBoard from './Components/Pages/DashBoard/DashBoard';
 import MyAppointment from './Components/Pages/DashBoard/MyAppointment';
 import MyReview from './Components/Pages/DashBoard/MyReview';
+import MyHistory from './Components/Pages/DashBoard/MyHistory';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         }>
           <Route index element={<MyAppointment></MyAppointment>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
+          <Route path='history' element={<MyHistory></MyHistory>}></Route>
         </Route>
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />

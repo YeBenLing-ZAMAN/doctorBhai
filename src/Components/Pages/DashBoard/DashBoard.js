@@ -23,6 +23,7 @@ const DashBoard = () => {
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to='/dashboard'>Appointment</Link></li>
                     <li><Link to='/dashboard/review'>My review</Link></li>
+                    <li><Link to='/dashboard/history'>My history</Link></li>
                 </ul>
 
             </div>
