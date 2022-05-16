@@ -5,7 +5,7 @@ const DashBoard = () => {
     return (
         <div class="drawer drawer-mobile">
             <input id="dashBoard-sidebar" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content bg-gradient-to-r from-primary to-secondary">
+            <div class="drawer-content bg-base-100 p-3">
                 {/* <!-- Page content here --> */}
                 <div className='flex items-center justify-around	'>
                     <h2 className='text-purple-500 text-2xl  p-3 text-left lg:text-right'>welcome your Dash Board</h2>
@@ -24,6 +24,7 @@ const DashBoard = () => {
                     <li><Link to='/dashboard'>Appointment</Link></li>
                     <li><Link to='/dashboard/review'>My review</Link></li>
                     <li><Link to='/dashboard/history'>My history</Link></li>
+                    <li><Link to='/dashboard/users'>All users</Link></li>
                 </ul>
 
             </div>
