@@ -24,7 +24,7 @@ const AddDoctor = () => {
     const imageStroageKey = `537637e3061760d1ac5879c84a4a06d9`;
 
     const onSubmit = async data => {
-        // console.log(data);
+        //console.log(data);
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -40,9 +40,10 @@ const AddDoctor = () => {
                     const doctor = {
                         name: data.name,
                         email: data.email,
-                        specialty: data.specialty,
+                        specialty: data.Specialty,
                         img: img
                     }
+                   console.log("doctor object ",doctor);
                     /* send to your database */
                     fetch(`http://localhost:5000/doctor`, {
                         method: 'POST',
