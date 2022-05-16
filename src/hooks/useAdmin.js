@@ -8,7 +8,7 @@ const useAdmin = user => {
         const email = user?.email;
         console.log(email);
         if (email) {
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://sheltered-earth-75473.herokuapp.com/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

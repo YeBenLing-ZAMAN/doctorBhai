@@ -10,7 +10,7 @@ const MyAppointment = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (true) {
-            fetch(`http://localhost:5000/booking?patient=${user.email}`, {
+            fetch(`https://sheltered-earth-75473.herokuapp.com/booking?patient=${user.email}`, {
                 method: "GET",
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accesstoken')}`

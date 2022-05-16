@@ -7,7 +7,7 @@ const useToken = user => {
         const currentUser = { email: email };
         if (email) {
             console.log('user jeta pachi', user);
-            fetch(`http://localhost:5000/user/${email}`,{
+            fetch(`https://sheltered-earth-75473.herokuapp.com/user/${email}`,{
                 method:"PUT",
                 headers:{
                     'content-type':'application/json'

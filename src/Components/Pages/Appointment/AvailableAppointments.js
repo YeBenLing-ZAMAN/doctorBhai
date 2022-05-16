@@ -13,14 +13,14 @@ const AvailableAppointments = ({ date }) => {
     /* 
     const [services, setServices] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/available?date=${formattedDate}`)
+        fetch(`https://sheltered-earth-75473.herokuapp.com/available?date=${formattedDate}`)
         .then(res=>res.json())
         .then(data=>setServices(data));
     },[formattedDate])
     */
 
     const { isLoading, error, data: services, refetch } = useQuery(['available',formattedDate], () =>
-        fetch(`http://localhost:5000/available?date=${formattedDate}`).then(res =>
+        fetch(`https://sheltered-earth-75473.herokuapp.com/available?date=${formattedDate}`).then(res =>
             res.json()
         )
     )
