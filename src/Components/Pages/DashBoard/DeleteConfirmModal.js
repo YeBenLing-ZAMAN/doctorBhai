@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({doctorModalShowing ,setDoctorModalShowing,refetch})
     const {name, email} =doctorModalShowing;
 
     const handlDelete = () => {
-        fetch(`http://localhost:5000/doctor/${email}`, {
+        fetch(` https://sheltered-earth-75473.herokuapp.com/doctor/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accesstoken')}`

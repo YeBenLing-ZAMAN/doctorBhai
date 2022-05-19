@@ -6,7 +6,7 @@ import DoctorRow from './DoctorRow';
 
 const ManageDoctor = () => {
     const [doctorModalShowing, setDoctorModalShowing] = useState(false);
-    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('http://localhost:5000/doctor', {
+    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch(' https://sheltered-earth-75473.herokuapp.com/doctor', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accesstoken')}`
         }
