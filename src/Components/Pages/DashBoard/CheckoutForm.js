@@ -17,7 +17,7 @@ const CheckoutForm = ({ appointment }) => {
     const { price, patient, patientName, _id } = appointment;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/create-payment-intent`, {
+        fetch(` https://sheltered-earth-75473.herokuapp.com/create-payment-intent`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -94,7 +94,7 @@ const CheckoutForm = ({ appointment }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(` https://sheltered-earth-75473.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
