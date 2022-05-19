@@ -49,3 +49,15 @@ const Payment = () => {
 };
 
 export default Payment;
+
+
+
+/**
+ * 1. install stripe react stripe js
+ * 2.open stripe account on stripe website 
+ * 3.get published key pk......
+ * 4.create Elements wrapper using published key
+ * 5.create checkout form using card elenet, useStripe, useElements 
+ * 6.get card elements info(credit card info) 
+ * 7.fet credit card info/error
+ *  */
