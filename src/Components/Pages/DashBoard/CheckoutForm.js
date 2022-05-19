@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import Loading from '../../Shared/Loading';
 
 const CheckoutForm = ({ appointment }) => {
 
@@ -7,12 +8,13 @@ const CheckoutForm = ({ appointment }) => {
     const elements = useElements();
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('');
+    const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
 
 
-    const { price, patient, patientName } = appointment;
+    const { price, patient, patientName, _id } = appointment;
 
     useEffect(() => {
         fetch(`http://localhost:5000/create-payment-intent`, {
@@ -29,7 +31,7 @@ const CheckoutForm = ({ appointment }) => {
                     setClientSecret(data.clientSecret);
                 }
             })
-    },[])
+    }, [])
 
 
     const handleSubmit = async (event) => {
@@ -58,6 +60,8 @@ const CheckoutForm = ({ appointment }) => {
             console.log('[PaymentMethod]', paymentMethod);
             setCardError('');
         }
+        setSuccess('');
+        setProcessing(true);
 
         // confirm card payment 
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
@@ -76,11 +80,31 @@ const CheckoutForm = ({ appointment }) => {
         if (intentError) {
             setCardError(intentError?.message);
             setSuccess('');
+            setProcessing(false);
         } else {
             setCardError('');
             setTransactionId(paymentIntent.id)
             console.log(paymentIntent);
             setSuccess('Congrats! Your payment is completed.')
+
+
+            /* payment update in backend  */
+            //store payment on DB
+            const payment = {
+                appointment: _id,
+                transactionId: paymentIntent.id
+            }
+            fetch(`http://localhost:5000/booking/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accesstoken')}`
+                },
+                body: JSON.stringify(payment)
+            }).then(res => res.json()).then(data => {
+                setProcessing(false);
+                console.log(data)
+            })
         }
 
     };
@@ -105,7 +129,7 @@ const CheckoutForm = ({ appointment }) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-3 ' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-success btn-sm mt-3 ' type="submit" disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
             </form>
@@ -116,7 +140,7 @@ const CheckoutForm = ({ appointment }) => {
                 success && <div className='text-green-500'>
                     <p>{success}</p>
                     <p>Your transaction ID: <span className='text-orange-500'>{transactionId}</span></p>
-                     </div>
+                </div>
             }
         </>
     );

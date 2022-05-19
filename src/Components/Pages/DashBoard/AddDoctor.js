@@ -70,7 +70,7 @@ const AddDoctor = () => {
        
     }
     return (
-        <div>
+        <div className=''>
             <h2 className='text-2xl'>add a new doctor</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
