@@ -3,8 +3,8 @@
 Beacome a punctual doctor! it's help you to managament you daily professional works.
 
 ##
-admin user: mama@gmail.com
-admin pass: 123456
+- admin user: mama@gmail.com
+- admin pass: 123456
 ##
 
 ## Features
